@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Aadhar {
@@ -12,11 +13,19 @@ public class Aadhar {
    private int aid;
    private String aaddress;
    private long acontact;
+   @OneToOne
+   private Person p;
 public int getAid() {
 	return aid;
 }
 public void setAid(int aid) {
 	this.aid = aid;
+}
+public Person getP() {
+	return p;
+}
+public void setP(Person p) {
+	this.p = p;
 }
 public String getAaddress() {
 	return aaddress;

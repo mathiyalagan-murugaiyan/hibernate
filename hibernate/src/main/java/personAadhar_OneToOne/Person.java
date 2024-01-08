@@ -1,5 +1,6 @@
 package personAadhar_OneToOne;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +14,7 @@ public class Person {
     private int pid;
     private String pname;
     private long pcontact;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Aadhar padhaar;
       
 	public Aadhar getPadhaar() {
@@ -42,8 +43,8 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [pid=" + pid + ", pname=" + pname + ", pcontact=" + pcontact + ", padhaar=" + padhaar + "]";
+		return "Person [pid=" + pid + ", pname=" + pname + ", pcontact=" + pcontact + "]";
 	}
-    
+	
     
 }
