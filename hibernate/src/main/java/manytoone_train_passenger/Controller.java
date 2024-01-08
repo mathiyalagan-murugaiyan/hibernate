@@ -1,9 +1,12 @@
 package manytoone_train_passenger;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class Controller {
 
@@ -60,7 +63,7 @@ public class Controller {
 // 		t2.settrainTo("trichy");
 // 		
 // 		et.begin();
-// 		em.persist(t1);
+//   	em.persist(t1);
 // 		em.persist(t2);
 // 		et.commit();
  		
@@ -126,9 +129,29 @@ public class Controller {
  		
  		/*************************************************************************************/
  		
- 		PassengerDao train = new PassengerDao();
- 		train.deleteByTrain(1);
+// 		PassengerDao train = new PassengerDao();
+// 		train.deleteByTrain(1);
  		
+// 		String q1 = "select p from Passenger p";
+// 		
+// 		Query query = em.createQuery(q1);
+// 		List<Passenger> passengers = query.getResultList();
+// 		
+// 		for(Passenger p : passengers) {
+// 			
+// 			System.out.println(p);
+// 			
+// 		}
+ 		
+ 		String q2 = "select p from Passenger p where p.name=?1";
+ 		
+ 		Query query1 = em.createQuery(q2);
+ 		
+ 		query1.setParameter(1, "ram");
+ 		
+ 		Passenger p = (Passenger) query1.getSingleResult();
+ 		
+ 		System.out.println(p);
  		
  		
 	}

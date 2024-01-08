@@ -59,10 +59,12 @@ public class Train {
 		this.trainTo = trainTo;
 	}
 
-	public String trainToString() {
-		return "Train [id=" + id + ", tname=" + tname + ", noOfCoches=" + noOfCoches + ", trainFrom=" + trainFrom + ", trainTo=" + trainTo
-				+ "]";
+	@Override
+	public String toString() {
+		return "Train [id=" + id + ", tname=" + tname + ", noOfCoches=" + noOfCoches + ", trainFrom=" + trainFrom
+				+ ", trainTo=" + trainTo + "]";
 	}
+
 
 	
 	
