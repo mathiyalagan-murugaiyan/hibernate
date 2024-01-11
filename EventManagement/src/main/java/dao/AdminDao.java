@@ -52,19 +52,14 @@ public class AdminDao {
 	
 	public Admin deleteAdmin(int id) {
 		
-		Admin exadmin= em.find(Admin.class, id);
+		Admin admin= em.find(Admin.class, id);
 		
 		
-		if(exadmin != null) {
+		
 			et.begin();
-			em.remove(exadmin);
+			em.remove(admin);
 			et.commit();
-			return exadmin;
-		}
-		else {
-			et.rollback();
-		}
-		return null;
+			return admin;
 		
 		
 	}

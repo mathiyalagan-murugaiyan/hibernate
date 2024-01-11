@@ -19,9 +19,7 @@ public class ServiceDao {
 			et.begin();
 			em.persist(service);
 			et.commit();
-		} else {
-			et.rollback();
-		}
+		} 
 		return service;
 	}
 
