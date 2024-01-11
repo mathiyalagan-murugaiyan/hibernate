@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.swing.event.DocumentEvent.EventType;
 
 @Entity
 public class ClientEvent {

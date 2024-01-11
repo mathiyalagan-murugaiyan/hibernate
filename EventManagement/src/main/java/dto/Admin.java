@@ -22,58 +22,45 @@ public class Admin {
 	
 	private String adminPassword;
 	
-	private String adminContact;
+	private Long adminContact;
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Service> services;
-
 	public int getAdminid() {
 		return adminid;
 	}
-
 	public void setAdminid(int adminid) {
 		this.adminid = adminid;
 	}
-
 	public String getAdminName() {
 		return adminName;
 	}
-
 	public void setAdminName(String adminName) {
 		this.adminName = adminName;
 	}
-
 	public String getAdminMail() {
 		return adminMail;
 	}
-
 	public void setAdminMail(String adminMail) {
 		this.adminMail = adminMail;
 	}
-
 	public String getAdminPassword() {
 		return adminPassword;
 	}
-
 	public void setAdminPassword(String adminPassword) {
 		this.adminPassword = adminPassword;
 	}
-
-	public String getAdminContact() {
+	public Long getAdminContact() {
 		return adminContact;
 	}
-
-	public void setAdminContact(String adminContact) {
+	public void setAdminContact(Long adminContact) {
 		this.adminContact = adminContact;
 	}
-
 	public List<Service> getServices() {
 		return services;
 	}
-
 	public void setServices(List<Service> services) {
 		this.services = services;
 	}
-
 	@Override
 	public String toString() {
 		return "Admin [adminid=" + adminid + ", adminName=" + adminName + ", adminMail=" + adminMail
