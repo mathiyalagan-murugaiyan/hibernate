@@ -1,6 +1,7 @@
 package dto;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,9 +19,9 @@ public class ClientEvent {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int clientEventId;
 	
-	private String clientEventNoOfPeople;
+	private int clientEventNoOfPeople;
 	
-	private LocalDate startDate;
+	private Date startDate;
 	
 	private int  clientEventNoODays;
 	
@@ -44,19 +45,19 @@ public class ClientEvent {
 		this.clientEventId = clientEventId;
 	}
 
-	public String getClientEventNoOfPeople() {
+	public int getClientEventNoOfPeople() {
 		return clientEventNoOfPeople;
 	}
 
-	public void setClientEventNoOfPeople(String clientEventNoOfPeople) {
+	public void setClientEventNoOfPeople(int clientEventNoOfPeople) {
 		this.clientEventNoOfPeople = clientEventNoOfPeople;
 	}
 
-	public LocalDate getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(LocalDate startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
@@ -115,6 +116,10 @@ public class ClientEvent {
 				+ clientEventLocation + ", clientEventCost=" + clientEventCost + ", client=" + client
 				+ ", clientservices=" + clientservices + ", eventType=" + eventType + "]";
 	}
+
+
+
+
 
      
 	

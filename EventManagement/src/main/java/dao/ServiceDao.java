@@ -43,8 +43,6 @@ public class ServiceDao {
 			et.begin();
 			em.merge(service);
 			et.commit();
-		}else {
-			et.rollback();
 		}
 
 		return null;
@@ -52,16 +50,14 @@ public class ServiceDao {
 	
 public Service deleteService(int id) {
 		
-		Service service = em.find(Service.class, id );
-		if(service != null) {
-			et.begin();
-			em.remove(service);
-			et.commit();
-		}else {
-			et.rollback();
-		}
+	Service service = em.find(Service.class, id);
+	if (service != null) {
+	     et.begin();
+         em.remove(service);
+         et.commit();
+         return service;
+	}
 		return null;
-		
 	}
 
 

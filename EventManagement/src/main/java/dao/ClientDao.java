@@ -14,14 +14,11 @@ public class ClientDao {
 	EntityTransaction et = em.getTransaction();
 	
 	public Client saveClient(Client client) {
-		if(client == null) {
+		if(client != null) {
 			
 			et.begin();
 			em.persist(client);
 			et.commit();
-		}
-		else {
-		 et.rollback();
 		}
 		return client;
 	

@@ -22,6 +22,8 @@ public class Client {
 	
 	private String clientMail;
 	
+	private String password;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<ClientEvent> events;
 
@@ -65,14 +67,19 @@ public class Client {
 		this.events = events;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		return "Client [clientid=" + clientid + ", clientName=" + clientName + ", clientContact=" + clientContact
-				+ ", clientMail=" + clientMail + ", events=" + events + "]";
+				+ ", clientMail=" + clientMail + ", password=" + password + ", events=" + events + "]";
 	}
 
-
-	
-	
 
 }
